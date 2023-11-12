@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#588068</color>
+    <color name="colorPrimaryDark">#1F3B2C</color>
+    <color name="colorAccent">#E5B0A4</color>
+    <color name="navigationbar">#9D8A76</color>
+    <color name="buttoncolor">#F87B7B</color>
+    <color name="mintcream">#F5FFFA</color>
+</resources>

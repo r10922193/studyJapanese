@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.studyjapanese">
+
+    <uses-permission android:name="com.example.udacity.droidtermsexample.TERMS_READ"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".WordActivity"
+            android:label="@string/activity_word"/>
+
+        <activity android:name=".AddWordActivity"
+            android:label="@string/add_word"/>
+
+        <activity android:name=".QuizActivity"
+            android:label="@string/quiz"/>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+        <activity android:name=".WordDataActivity"
+            android:label="@string/activity_word"/>
+
+        <activity android:name=".UpdateWordActivity"
+            android:label="@string/update_word"/>
+
+        <provider
+            android:authorities="com.example.studyjapanese"
+            android:name="com.example.studyjapanese.data.WordContentProvider"
+            android:exported="false"/>
+        <!--闹钟接收广播-->
+        <receiver android:name=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.e_eduspace.TIMER_ACTION_REPEATING" />
+                <action android:name="com.e_eduspace.TIMER_ACTION" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
